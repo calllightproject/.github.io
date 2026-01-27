@@ -5,80 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crawford Solutions</title>
 
-  <meta name="description" content="Nurse-informed healthcare workflow systems designed for efficiency, clarity, and care." />
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- Top bar (minimal, not busy) -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand-mini">Crawford Solutions</div>
-      <a class="btn btn-primary" href="#contact">Contact</a>
+  <!-- ================= Header ================= -->
+  <header>
+    <div class="container header-inner">
+      <div class="header-title">Crawford Solutions</div>
+      <a href="#contact" class="header-button">Contact</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main class="hero">
-    <div class="container hero-inner">
-      <img src="images/logo.jpg" alt="Crawford Solutions logo" class="logo" />
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
 
-      <h1>Crawford Solutions</h1>
+        <!-- LOGO -->
+        <img
+          src="images/logo.jpg"
+          alt="Crawford Solutions logo"
+          class="logo"
+        />
 
-      <p class="tagline">
-        Nurse-informed healthcare workflow systems designed for efficiency, clarity, and care.
-      </p>
+        <h1>Crawford Solutions</h1>
 
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#careconnect">CareConnect</a>
-        <a class="btn btn-ghost" href="#contact">Request demo</a>
+        <p>
+          Clinician-informed healthcare workflow systems designed for
+          efficiency, clarity, and care.
+        </p>
+
+        <div class="button-group">
+          <a href="#careconnect" class="primary-button">CareConnect</a>
+          <a href="#contact" class="secondary-button">Request demo</a>
+        </div>
+
       </div>
     </div>
-  </main>
+  </section>
 
-  <!-- CONTENT (minimal, readable, not boxy) -->
-  <section class="section" id="careconnect">
+  <!-- ================= CareConnect ================= -->
+  <section id="careconnect" class="section">
     <div class="container">
       <h2>CareConnect</h2>
       <p>
-        A digital patient request and triage layer designed to standardize request capture, support prioritization of
-        time-sensitive versus routine needs, and route requests by role—without replacing established safety pathways.
+        A digital patient request and triage layer designed to standardize
+        request capture, support prioritization of time-sensitive versus
+        routine needs, and route requests by role — without replacing
+        established safety pathways.
       </p>
     </div>
   </section>
 
-  <section class="section soft">
+  <!-- ================= Focus ================= -->
+  <section class="section">
     <div class="container">
       <h2>What we focus on</h2>
-
-      <ul class="bullets">
-        <li><strong>Efficiency:</strong> reduce ambiguity and unnecessary back-and-forth.</li>
-        <li><strong>Care:</strong> support teams and patients with calmer, clearer workflows.</li>
-        <li><strong>Equity:</strong> design for language and communication barriers.</li>
+      <ul class="focus-list">
+        <li><strong>Efficiency:</strong> reducing ambiguity and unnecessary back-and-forth.</li>
+        <li><strong>Care:</strong> supporting teams and patients with calmer, clearer workflows.</li>
+        <li><strong>Equity:</strong> designing for language and communication barriers.</li>
       </ul>
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <!-- ================= Contact ================= -->
+  <section id="contact" class="section contact">
     <div class="container">
       <h2>Contact</h2>
-      <p class="small">
+      <p>
         For pilots, demos, or collaboration:
-        <a href="mailto:info@crawfordsolutionsllc.com">info@crawfordsolutionsllc.com</a>
+        <a href="mailto:info@crawfordsolutionsllc.com">
+          info@crawfordsolutionsllc.com
+        </a>
       </p>
     </div>
   </section>
 
-  <footer class="footer">
+  <!-- ================= Footer ================= -->
+  <footer>
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Crawford Solutions LLC</span>
-      <span class="muted">Clinician-informed workflow systems</span>
+      <div>© 2026 Crawford Solutions LLC</div>
+      <div>Clinician-informed workflow systems</div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
