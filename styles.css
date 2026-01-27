@@ -21,7 +21,7 @@ body{
   /* Background that matches your image: soft white + faint blue + image overlay */
   background:
     linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)),
-    url("assets/bg.jpg"); /* <- change to bg.png if needed */
+    url("assets/logo.jpg"); /* <- change to bg.png if needed */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
