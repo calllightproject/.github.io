@@ -65,6 +65,35 @@ header {
   font-size: 0.9rem;
 }
 
+
+/* ===============================
+   Brand logo in header
+================================ */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  object-position: center;
+
+  /* hides black bars */
+  border-radius: 10px;
+
+  /* subtle crop so only CS mark shows */
+  clip-path: inset(20% 20% 20% 20%);
+}
+
+.brand span {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #1e293b;
+}
+
 /* ===============================
    Hero
 ================================ */
