@@ -4,77 +4,368 @@
   <meta charset="utf-8" />
   <title>Crawford Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Clinician-built workflow tools for safer, clearer care." />
 
-  <!-- Clean medical font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg-main: #f7faff;      /* whisper blue */
-      --bg-accent: #eef4ff;   /* subtle gradient */
-      --text-main: #1f2a44;   /* deep clinical blue */
-      --text-muted: #5f6f8f;  /* soft slate */
+    :root{
+      --bg:#f7fbff;           /* whisper blue */
+      --bg2:#eef5ff;          /* slightly deeper */
+      --card:#ffffffcc;
+      --border:#dbe7ff;
+      --text:#1f2a44;
+      --muted:#5f6f8f;
+      --accent:#2f6bff;       /* calm clinical blue */
+      --accent2:#cfe0ff;
+      --shadow: 0 20px 60px rgba(31,42,68,.10);
+      --radius: 18px;
+      --max: 1020px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      height: 100vh;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
       font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(
-          800px 500px at 50% -10%,
-          var(--bg-accent),
-          transparent 60%
-        ),
-        var(--bg-main);
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      background:
+        radial-gradient(900px 500px at 50% -10%, var(--bg2), transparent 60%),
+        radial-gradient(900px 500px at 10% 10%, #f2f7ff, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height:1.55;
     }
 
-    .container {
-      max-width: 640px;
-      padding: 24px;
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      background: rgba(247,251,255,.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 20;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:-.2px;
+    }
+    .dot{
+      width:12px;height:12px;border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 10px 20px rgba(47,107,255,.25);
+    }
+    .links{
+      display:flex;
+      gap:18px;
+      font-weight:500;
+      color: var(--muted);
+      font-size:14px;
+    }
+    .links a:hover{color: var(--text)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      font-weight:600;
+      transition: transform .08s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn-primary{
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .btn-secondary{
+      background: #ffffffa8;
     }
 
-    h1 {
-      font-size: 42px;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      margin-bottom: 14px;
+    /* Hero */
+    .hero{
+      padding:64px 0 26px;
+      text-align:center;
+    }
+    .eyebrow{
+      color: var(--muted);
+      font-weight:600;
+      font-size:13px;
+      letter-spacing:.3px;
+      text-transform: uppercase;
+      margin-bottom:12px;
+    }
+    h1{
+      font-size:44px;
+      letter-spacing:-.8px;
+      line-height:1.08;
+      margin-bottom:14px;
+    }
+    .lead{
+      max-width:72ch;
+      margin:0 auto 22px;
+      color: var(--muted);
+      font-size:17px;
+    }
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+    .stats{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+    .stat{
+      background: #ffffffa8;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding:12px 14px;
+      min-width: 170px;
+      box-shadow: 0 10px 30px rgba(31,42,68,.06);
+      text-align:left;
+    }
+    .stat b{display:block}
+    .stat span{color:var(--muted); font-size:12px}
+
+    /* Sections */
+    section{padding:42px 0}
+    .section-head{
+      margin-bottom:16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    h2{font-size:24px; letter-spacing:-.4px}
+    .sub{color:var(--muted); max-width:70ch}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: var(--shadow);
+    }
+    .card h3{font-size:16px; margin-bottom:8px}
+    .card p{color:var(--muted); font-size:14px}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#ffffffb8;
+      color: var(--muted);
+      font-size:12px;
+      font-weight:600;
+      margin-bottom:10px;
     }
 
-    p {
-      font-size: 17px;
-      color: var(--text-muted);
-      line-height: 1.5;
+    .two{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .list{
+      margin:10px 0 0 18px;
+      color: var(--muted);
+      font-size:14px;
+    }
+    .list li{margin:6px 0}
+
+    /* Contact */
+    .contact{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:18px;
     }
 
-    .divider {
-      width: 48px;
-      height: 3px;
-      background: #cfdcff;
-      margin: 28px auto;
-      border-radius: 2px;
+    footer{
+      border-top:1px solid var(--border);
+      padding:18px 0 28px;
+      color: var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media (max-width: 920px){
+      h1{font-size:36px}
+      .grid{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .links{display:none}
+      .stat{min-width: 220px}
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Crawford Solutions</h1>
-    <div class="divider"></div>
-    <p>
-      Clinician-built workflow tools for safer, clearer care.
-    </p>
-  </div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        Crawford Solutions
+      </div>
+
+      <nav class="links" aria-label="Site">
+        <a href="#product">Product</a>
+        <a href="#why">Why</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#contact">Request demo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Clinician-built • Safety-first • Workflow clarity</div>
+        <h1>Crawford Solutions</h1>
+        <p class="lead">Clinician-built workflow tools for safer, clearer care.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Request demo</a>
+          <a class="btn btn-secondary" href="#product">See the product</a>
+        </div>
+
+        <div class="stats" aria-label="Highlights">
+          <div class="stat"><b>Clarity</b><span>Structured intent capture</span></div>
+          <div class="stat"><b>Routing</b><span>Role + prioritization support</span></div>
+          <div class="stat"><b>Equity</b><span>Language & accessibility support</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>CareConnect (prototype)</h2>
+            <p class="sub">A digital patient request and triage layer designed to complement existing call-light and care team communication workflows.</p>
+          </div>
+        </div>
+
+        <div class="two">
+          <div class="card">
+            <div class="pill">How it works</div>
+            <h3>Capture → Prioritize → Route</h3>
+            <p>
+              Patients submit structured requests via QR or tablet with optional free text. The system standardizes intake, supports prioritization of time-sensitive vs routine needs, and routes requests by role (e.g., licensed vs support).
+            </p>
+            <ul class="list">
+              <li>Structured buttons + guided follow-ups</li>
+              <li>Optional free-text note for context</li>
+              <li>Time-based visibility escalation for team awareness</li>
+              <li>Status feedback loop (ack / on my way / completed)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="pill">Designed for healthcare</div>
+            <h3>Safety-first posture</h3>
+            <p>
+              Built to reduce ambiguity and relay burden without replacing established safety or emergency pathways.
+            </p>
+            <ul class="list">
+              <li>Supports conservative prioritization</li>
+              <li>Access can be gated (e.g., signed QR + room active window)</li>
+              <li>Auditability for key events</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Why it matters</h2>
+            <p class="sub">Built from bedside reality to reduce alarm fatigue, unclear requests, and avoidable interruptions.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Reduce ambiguity</h3>
+            <p>Standardized request capture helps staff understand what’s needed the first time.</p>
+          </div>
+          <div class="card">
+            <h3>Support equitable access</h3>
+            <p>Designed for language and communication barriers, including Deaf and low-vision considerations.</p>
+          </div>
+          <div class="card">
+            <h3>Improve prioritization</h3>
+            <p>Helps teams distinguish time-sensitive needs from routine requests without increasing alarm burden.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>About</h2>
+            <p class="sub">Sophia Crawford, RN BSN — postpartum nurse and independent builder of CareConnect.</p>
+          </div>
+        </div>
+
+        <div class="two">
+          <div class="card">
+            <h3>Clinician-led design</h3>
+            <p>CareConnect was built independently to support care teams with clarity, reliability, and safety-first workflow design.</p>
+          </div>
+          <div class="card" id="contact">
+            <h3>Request a demo</h3>
+            <p>Email me and I’ll reply with next steps.</p>
+            <div style="margin-top:14px">
+              <a class="btn btn-primary" href="mailto:YOUR_EMAIL_HERE?subject=CareConnect%20Demo%20Request">Email Sophia</a>
+            </div>
+            <p style="margin-top:10px;color:var(--muted);font-size:12px">Replace YOUR_EMAIL_HERE with your email address.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Crawford Solutions
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
