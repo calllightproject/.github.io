@@ -5,131 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crawford Solutions</title>
 
-  <meta
-    name="description"
-    content="Crawford Solutions designs clinician-informed healthcare workflow systems that improve efficiency and support safer, more equitable care."
-  />
-
+  <meta name="description" content="Clinician-informed healthcare workflow systems designed for efficiency, clarity, and care." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-content">
-      <img
-        src="images/logo.png"
-        alt="Crawford Solutions logo"
-        class="logo"
-      />
-
-      <h1>Crawford Solutions</h1>
-
-      <p class="hero-tagline">
-        Clinician-informed healthcare workflow systems
-        designed for efficiency, clarity, and care.
-      </p>
-
-      <a
-        href="mailto:info@crawfordsolutionsllc.com"
-        class="primary-cta"
-      >
-        Contact
-      </a>
+  <!-- Top bar (minimal, not busy) -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-mini">Crawford Solutions</div>
+      <a class="btn btn-primary" href="#contact">Contact</a>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section class="section">
-    <div class="container">
-      <h2>Who We Are</h2>
+  <!-- HERO -->
+  <main class="hero">
+    <div class="container hero-inner">
+      <img src="assets/logo.png" alt="Crawford Solutions logo" class="logo" />
 
-      <p>
-        Crawford Solutions is a healthcare technology company focused on
-        designing practical workflow systems for hospital care teams.
-        Our work is informed by firsthand clinical experience and a
-        systems-level understanding of how care is delivered.
+      <h1>Crawford Solutions</h1>
+
+      <p class="tagline">
+        Clinician-informed healthcare workflow systems designed for efficiency, clarity, and care.
       </p>
 
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#careconnect">CareConnect</a>
+        <a class="btn btn-ghost" href="#contact">Request demo</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- CONTENT (minimal, readable, not boxy) -->
+  <section class="section" id="careconnect">
+    <div class="container">
+      <h2>CareConnect</h2>
       <p>
-        We build tools that reduce friction in daily operations,
-        support clearer prioritization, and help teams work more
-        efficiently—without adding cognitive burden or disrupting
-        established safety practices.
+        A digital patient request and triage layer designed to standardize request capture, support prioritization of
+        time-sensitive versus routine needs, and route requests by role—without replacing established safety pathways.
       </p>
     </div>
   </section>
 
-  <!-- PRINCIPLES -->
-  <section class="section subtle">
+  <section class="section soft">
     <div class="container">
-      <h2>Design Principles</h2>
+      <h2>What we focus on</h2>
 
-      <ul class="principles">
-        <li>
-          <strong>Efficiency with intention.</strong>
-          Streamlining workflows to reduce unnecessary interruption
-          while preserving clinical judgment.
-        </li>
-
-        <li>
-          <strong>Care-centered systems.</strong>
-          Supporting care teams and patients through clearer,
-          more equitable communication pathways.
-        </li>
-
-        <li>
-          <strong>Clinician-informed.</strong>
-          Designed with direct insight into hospital environments,
-          workflows, and real-world constraints.
-        </li>
-
-        <li>
-          <strong>Enterprise-ready.</strong>
-          Built to integrate conservatively within existing
-          clinical and safety frameworks.
-        </li>
+      <ul class="bullets">
+        <li><strong>Efficiency:</strong> reduce ambiguity and unnecessary back-and-forth.</li>
+        <li><strong>Care:</strong> support teams and patients with calmer, clearer workflows.</li>
+        <li><strong>Equity:</strong> design for language and communication barriers.</li>
       </ul>
     </div>
   </section>
 
-  <!-- PRODUCT -->
-  <section class="section">
+  <section class="section" id="contact">
     <div class="container">
-      <h2>CareConnect</h2>
-
-      <p>
-        CareConnect is a digital patient request and triage platform
-        designed to support clearer request capture, improve visibility
-        for care teams, and assist with prioritization of routine and
-        time-sensitive needs.
-      </p>
-
-      <p>
-        The platform is designed to complement existing workflows,
-        providing structure and clarity without replacing established
-        safety pathways or clinical decision-making.
+      <h2>Contact</h2>
+      <p class="small">
+        For pilots, demos, or collaboration:
+        <a href="mailto:info@crawfordsolutionsllc.com">info@crawfordsolutionsllc.com</a>
       </p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-content">
-      <p>
-        © <span id="year"></span> Crawford Solutions LLC
-      </p>
-
-      <p>
-        Clinician-informed healthcare workflow systems
-      </p>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Crawford Solutions LLC</span>
+      <span class="muted">Clinician-informed workflow systems</span>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
