@@ -10,8 +10,20 @@
 html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
   color: #0f172a;
-  background-color: #f8fbfe;
   line-height: 1.6;
+
+  /* FULL BACKGROUND FROM YOUR IMAGE */
+  background:
+    linear-gradient(
+      rgba(248, 251, 254, 0.94),
+      rgba(248, 251, 254, 0.94)
+    ),
+    url("images/logo.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* ===============================
@@ -27,7 +39,8 @@ html, body {
    Header
 ================================ */
 header {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid #e5edf5;
 }
 
@@ -41,7 +54,6 @@ header {
 .header-title {
   font-weight: 600;
   font-size: 1.05rem;
-  color: #1e293b;
 }
 
 .header-button {
@@ -53,53 +65,25 @@ header {
   font-size: 0.9rem;
 }
 
-.header-button:hover {
-  background: #2378b3;
-}
-
 /* ===============================
-   Hero section
+   Hero
 ================================ */
 .hero {
-  padding: 4rem 0 3.5rem;
+  padding: 5rem 0 4rem;
 }
 
 .hero-card {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 22px;
   padding: 3.5rem 2.5rem;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
 }
 
-/* ===============================
-   LOGO FIX (important part)
-================================ */
-.logo {
-  max-width: 260px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 1.75rem;
-
-  /* hides black bars visually */
-  object-fit: contain;
-  background-color: transparent;
-  border-radius: 12px;
-
-  /* soft edge mask */
-  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-}
-
-/* ===============================
-   Hero text
-================================ */
 .hero h1 {
-  font-size: 2.6rem;
+  font-size: 2.7rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #0f172a;
 }
 
 .hero p {
@@ -122,28 +106,18 @@ header {
 .primary-button {
   background: #2b8ccf;
   color: white;
-  padding: 0.7rem 1.4rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.primary-button:hover {
-  background: #2378b3;
 }
 
 .secondary-button {
   border: 1px solid #cbd5e1;
-  color: #1e293b;
-  padding: 0.7rem 1.4rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.95rem;
+  color: #1e293b;
   background: white;
-}
-
-.secondary-button:hover {
-  background: #f1f5f9;
 }
 
 /* ===============================
@@ -155,7 +129,6 @@ header {
 
 .section h2 {
   font-size: 1.6rem;
-  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -173,42 +146,28 @@ header {
 
 .focus-list li {
   margin-bottom: 0.6rem;
-  color: #334155;
-}
-
-.focus-list strong {
-  color: #0f172a;
 }
 
 /* ===============================
    Contact
 ================================ */
-.contact {
-  padding-bottom: 4rem;
-}
-
 .contact a {
   color: #2b8ccf;
   text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
 }
 
 /* ===============================
    Footer
 ================================ */
 footer {
+  background: rgba(255, 255, 255, 0.85);
   border-top: 1px solid #e5edf5;
   padding: 1.5rem 0;
   font-size: 0.85rem;
-  color: #64748b;
 }
 
 .footer-inner {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.75rem;
 }
