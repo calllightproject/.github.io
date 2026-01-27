@@ -1,205 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crawford Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Nurse-built workflow systems for safer, clearer care." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Crawford Solutions designs clinician-built workflow systems that bring clarity, equity, and efficiency to hospital care teams." />
 
-  <style>
-    :root{
-      --bg1:#e7f0ff;
-      --bg2:#f7fbff;
-      --ink:#0b1b35;
-      --muted:#4a648f;
-      --accent:#1d4ed8;
-      --max:900px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-
-    body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, var(--bg1), var(--bg2));
-      color: var(--ink);
-      line-height:1.55;
-    }
-
-    .container{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 22px;
-    }
-
-    header{
-      padding: 28px 0;
-    }
-
-    main{
-      padding: 60px 0 40px;
-      text-align: center;
-    }
-
-    /* LOGO */
-    .logo{
-      display:flex;
-      justify-content:center;
-      margin-bottom: 24px;
-    }
-
-    /* HERO */
-    h1{
-      font-size: 48px;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
-
-    .tagline{
-      font-size: 20px;
-      color: var(--muted);
-      max-width: 640px;
-      margin: 0 auto 28px;
-    }
-
-    .cta{
-      margin-bottom: 56px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding: 12px 20px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #1d4ed8, #2563eb);
-      color: #fff;
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: none;
-    }
-
-    /* SECTIONS */
-    section{
-      max-width: 720px;
-      margin: 0 auto 48px;
-      text-align: left;
-    }
-
-    section h2{
-      font-size: 20px;
-      margin-bottom: 8px;
-      letter-spacing: -.2px;
-    }
-
-    section p{
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    footer{
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(11,27,53,.12);
-      text-align:center;
-      font-size: 13px;
-      color: rgba(11,27,53,.6);
-    }
-
-    @media (max-width: 700px){
-      h1{font-size: 38px}
-      .tagline{font-size:18px}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-<header class="container">
-  <!-- optional future nav -->
-</header>
-
-<main class="container">
-
-  <!-- LOGO -->
-  <div class="logo">
-    <!-- simple CS logo placeholder -->
-    <svg width="56" height="56" viewBox="0 0 64 64" aria-label="Crawford Solutions logo">
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#1d4ed8"/>
-          <stop offset="1" stop-color="#2563eb"/>
-        </linearGradient>
-      </defs>
-      <path d="M38 20 C30 20,24 26,24 32 C24 38,30 44,38 44"
-            fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
-      <path d="M40 22 C46 22,48 26,44 28 C40 30,36 30,36 34 C36 38,40 38,44 40 C48 42,46 46,40 46"
-            fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
-      <path d="M40 18 L50 18 L50 28"
-            fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
-      <path d="M50 18 L38 30"
-            fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
-    </svg>
-  </div>
-
   <!-- HERO -->
-  <h1>Crawford Solutions</h1>
+  <header class="hero">
+    <div class="hero-content">
+      <img src="logo.png" alt="Crawford Solutions logo" class="logo" />
 
-  <p class="tagline">
-    Nurse-built workflow systems for safer, clearer care.
-  </p>
+      <h1>Crawford Solutions</h1>
 
-  <div class="cta">
-    <a class="btn" href="#contact">Request demo</a>
-  </div>
+      <p class="hero-tagline">
+        Clinician-built workflow systems that bring clarity, equity, and efficiency
+        to hospital care teams.
+      </p>
+
+      <a href="mailto:info@crawfordsolutionsllc.com" class="primary-cta">
+        Contact
+      </a>
+    </div>
+  </header>
 
   <!-- ABOUT -->
-  <section>
-    <h2>What we do</h2>
-    <p>
-      Crawford Solutions builds clinician-designed workflow tools that bring clarity,
-      efficiency, and equity to hospital care teams—without replacing established safety pathways.
-    </p>
+  <section class="section">
+    <div class="container">
+      <h2>Our Approach</h2>
+
+      <p>
+        Crawford Solutions is a healthcare technology company focused on designing
+        practical, systems-level tools informed by real clinical experience.
+        Our work centers on reducing ambiguity, supporting equitable care,
+        and helping care teams operate with greater clarity and efficiency.
+      </p>
+
+      <p>
+        We believe effective healthcare systems should support clinicians,
+        not add cognitive burden. Every solution we design prioritizes
+        safety, transparency, and alignment with established clinical workflows.
+      </p>
+    </div>
   </section>
 
-  <!-- PRODUCT -->
-  <section>
-    <h2>CareConnect</h2>
-    <p>
-      A digital patient request and triage layer designed to standardize how requests are captured,
-      prioritized, and routed—reducing ambiguity and unnecessary interruptions at the bedside.
-    </p>
+  <!-- PRINCIPLES -->
+  <section class="section subtle">
+    <div class="container">
+      <h2>Design Principles</h2>
+
+      <ul class="principles">
+        <li>
+          <strong>Clinician-informed.</strong>
+          Designed by frontline healthcare professionals with a deep understanding
+          of real-world hospital environments.
+        </li>
+
+        <li>
+          <strong>Equity-centered.</strong>
+          Built to support patients with diverse communication needs,
+          language preferences, and access barriers.
+        </li>
+
+        <li>
+          <strong>Systems-focused.</strong>
+          Complements existing safety pathways rather than replacing them,
+          integrating conservatively into clinical operations.
+        </li>
+
+        <li>
+          <strong>Operationally calm.</strong>
+          Reduces unnecessary interruption, alarm fatigue,
+          and back-and-forth communication.
+        </li>
+      </ul>
+    </div>
   </section>
 
-  <!-- PHILOSOPHY -->
-  <section>
-    <h2>Design philosophy</h2>
-    <p>
-      Built from real bedside experience and systems thinking.
-      Conservative where it matters, flexible where it helps,
-      and focused on supporting—not burdening—care teams.
-    </p>
+  <!-- PRODUCT OVERVIEW -->
+  <section class="section">
+    <div class="container">
+      <h2>CareConnect</h2>
+
+      <p>
+        CareConnect is a digital patient request and triage platform designed to
+        standardize request capture, support prioritization of time-sensitive versus
+        routine needs, and route requests by clinical role.
+      </p>
+
+      <p>
+        The system is designed to operate conservatively within hospital safety
+        frameworks, providing clarity and visibility for care teams without
+        introducing new risk pathways.
+      </p>
+    </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      For demos, pilots, or collaboration inquiries:<br>
-      <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a>
-    </p>
-  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>
+        © <span id="year"></span> Crawford Solutions LLC
+      </p>
 
-  <footer>
-    © <span id="year"></span> Crawford Solutions
+      <p>
+        Clinician-designed healthcare workflow systems
+      </p>
+    </div>
   </footer>
 
-</main>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
