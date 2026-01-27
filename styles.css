@@ -1,185 +1,214 @@
-:root{
-  --ink:#0b1b35;
-  --muted:#4a6a86;
-  --accent:#1d77b8;
-  --accent2:#58b4dd;
-
-  --panel: rgba(255,255,255,0.78);
-  --panel2: rgba(255,255,255,0.62);
-  --line: rgba(11,27,53,0.12);
-
-  --max: 900px;
+/* ===============================
+   Base reset
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  color: var(--ink);
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+  background-color: #f8fbfe;
   line-height: 1.6;
-
-  /* Background that matches your image: soft white + faint blue + image overlay */
-  background:
-    linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)),
-    url("assets/logo.jpg"); /* <- change to bg.png if needed */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
-/* Container */
-.container{
-  max-width: var(--max);
+/* ===============================
+   Layout containers
+================================ */
+.container {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 1.5rem;
 }
 
-/* Topbar */
-.topbar{
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+/* ===============================
+   Header
+================================ */
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5edf5;
 }
 
-.topbar-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 0;
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
 }
 
-.brand-mini{
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: rgba(11,27,53,0.82);
-}
-
-/* Buttons */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 10px 16px;
-  border-radius: 999px;
-  text-decoration:none;
+.header-title {
   font-weight: 600;
-  border: 1px solid rgba(29,119,184,0.25);
-  transition: transform .08s ease, background .2s ease;
+  font-size: 1.05rem;
+  color: #1e293b;
 }
 
-.btn:hover{ transform: translateY(-1px); }
-
-.btn-primary{
-  color: #fff;
-  border-color: rgba(29,119,184,0.35);
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+.header-button {
+  background: #2b8ccf;
+  color: white;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
 }
 
-.btn-ghost{
-  color: rgba(11,27,53,0.78);
-  background: rgba(255,255,255,0.55);
+.header-button:hover {
+  background: #2378b3;
 }
 
-/* Hero */
-.hero{
-  padding: 90px 0 54px;
+/* ===============================
+   Hero section
+================================ */
+.hero {
+  padding: 4rem 0 3.5rem;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 22px;
+  padding: 3.5rem 2.5rem;
   text-align: center;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
 }
 
-.hero-inner{
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 46px 22px;
-}
-
-.logo{
-  width: 150px;
+/* ===============================
+   LOGO FIX (important part)
+================================ */
+.logo {
+  max-width: 260px;
+  width: 100%;
   height: auto;
-  margin-bottom: 18px;
+  display: block;
+  margin: 0 auto 1.75rem;
+
+  /* hides black bars visually */
+  object-fit: contain;
+  background-color: transparent;
+  border-radius: 12px;
+
+  /* soft edge mask */
+  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
 }
 
-h1{
-  font-size: 46px;
-  letter-spacing: 0.04em;
+/* ===============================
+   Hero text
+================================ */
+.hero h1 {
+  font-size: 2.6rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  color: #0f172a;
 }
 
-.tagline{
-  font-size: 18px;
-  color: var(--muted);
+.hero p {
   max-width: 680px;
-  margin: 0 auto 22px;
+  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+  color: #475569;
 }
 
-.cta-row{
-  display:flex;
-  gap: 12px;
-  justify-content:center;
+/* ===============================
+   Buttons
+================================ */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-/* Sections (minimal, not boxy) */
-.section{
-  padding: 56px 0;
+.primary-button {
+  background: #2b8ccf;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
-.section.soft{
-  background: var(--panel2);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+.primary-button:hover {
+  background: #2378b3;
 }
 
-h2{
-  font-size: 22px;
-  margin-bottom: 10px;
-  letter-spacing: -0.02em;
+.secondary-button {
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  background: white;
 }
 
-p{
-  font-size: 16px;
-  color: rgba(11,27,53,0.75);
-  max-width: 760px;
+.secondary-button:hover {
+  background: #f1f5f9;
 }
 
-.small{ font-size: 15px; color: var(--muted); }
-
-.bullets{
-  margin-top: 12px;
-  padding-left: 18px;
-  color: rgba(11,27,53,0.75);
+/* ===============================
+   Sections
+================================ */
+.section {
+  padding: 3.5rem 0;
 }
 
-.bullets li{ margin: 8px 0; }
-
-a{ color: var(--accent); }
-
-/* Footer */
-.footer{
-  border-top: 1px solid var(--line);
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(10px);
-  padding: 18px 0;
+.section h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  gap: 12px;
+.section p {
+  max-width: 750px;
+  color: #475569;
+}
+
+/* ===============================
+   Focus list
+================================ */
+.focus-list {
+  margin-top: 1.5rem;
+}
+
+.focus-list li {
+  margin-bottom: 0.6rem;
+  color: #334155;
+}
+
+.focus-list strong {
+  color: #0f172a;
+}
+
+/* ===============================
+   Contact
+================================ */
+.contact {
+  padding-bottom: 4rem;
+}
+
+.contact a {
+  color: #2b8ccf;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Footer
+================================ */
+footer {
+  border-top: 1px solid #e5edf5;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  color: rgba(11,27,53,0.62);
-  font-size: 13px;
-}
-
-.muted{ color: rgba(11,27,53,0.55); }
-
-@media (max-width: 640px){
-  h1{ font-size: 36px; }
-  .hero{ padding: 70px 0 40px; }
-  .hero-inner{ padding: 36px 18px; }
-  .logo{ width: 120px; }
+  gap: 0.75rem;
 }
