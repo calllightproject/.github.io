@@ -2,73 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Crawford Solutions</title>
+
   <meta name="description" content="Nurse-built healthcare workflow systems designed for efficiency, clarity, and care." />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Clean, simple top header (no giant image block) -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="images/real-logo-use.jpg" alt="Crawford Solutions logo" class="brand-mark" />
-        <span class="brand-name">Crawford Solutions</span>
-      </div>
 
-      <a class="header-cta" href="#contact">Contact</a>
+  <!-- =========================
+       LARGE LOGO AT TOP
+  ========================== -->
+  <div class="logo-wrap">
+    <img
+      src="images/real-logo-use.jpg"
+      alt="Crawford Solutions logo"
+      class="main-logo"
+    />
+  </div>
+
+  <!-- =========================
+       HERO CARD
+  ========================== -->
+  <section class="hero">
+    <div class="hero-card">
+      <h1>Crawford Solutions</h1>
+
+      <p class="hero-subtitle">
+        Nurse-built healthcare workflow systems designed for efficiency, clarity, and care.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#careconnect" class="btn primary">CareConnect</a>
+        <a href="mailto:info@crawfordsolutionsllc.com" class="btn secondary">
+          Request demo
+        </a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main class="container">
-    <!-- Hero card (the “good version” look) -->
-    <section class="hero">
-      <div class="hero-card">
-        <h1>Crawford Solutions</h1>
-        <p class="tagline">
-          Nurse-built healthcare workflow systems designed for efficiency, clarity, and care.
-        </p>
+  <!-- =========================
+       CARECONNECT SECTION
+  ========================== -->
+  <section id="careconnect" class="content">
+    <h2>CareConnect</h2>
 
-        <div class="btn-row">
-          <a class="btn primary" href="#careconnect">CareConnect</a>
-          <a class="btn secondary" href="#contact">Request demo</a>
-        </div>
-      </div>
-    </section>
+    <p>
+      A digital patient request and triage layer designed to standardize request capture,
+      support prioritization of time-sensitive versus routine needs, and route requests
+      by role — without replacing established safety pathways.
+    </p>
+  </section>
 
-    <!-- CareConnect -->
-    <section id="careconnect" class="section">
-      <h2>CareConnect</h2>
-      <p>
-        A digital patient request and triage layer designed to standardize request capture,
-        support prioritization of time-sensitive versus routine needs, and route requests by role —
-        without replacing established safety pathways.
-      </p>
-    </section>
+  <!-- =========================
+       FOCUS SECTION
+  ========================== -->
+  <section class="content">
+    <h2>What we focus on</h2>
 
-    <!-- Focus -->
-    <section class="section">
-      <h2>What we focus on</h2>
-      <ul class="focus">
-        <li><strong>Efficiency:</strong> reducing ambiguity and unnecessary back-and-forth.</li>
-        <li><strong>Care:</strong> supporting teams and patients with calmer, clearer workflows.</li>
-        <li><strong>Equity:</strong> designing for language and communication barriers.</li>
-      </ul>
-    </section>
+    <ul class="focus-list">
+      <li><strong>Efficiency:</strong> reducing ambiguity and unnecessary back-and-forth.</li>
+      <li><strong>Care:</strong> supporting teams and patients with calmer, clearer workflows.</li>
+      <li><strong>Equity:</strong> designing for language and communication barriers.</li>
+    </ul>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>
-        For pilots, demos, or collaboration:
-        <a href="mailto:info@crawfordsolutionsllc.com">info@crawfordsolutionsllc.com</a>
-      </p>
-    </section>
+  <!-- =========================
+       CONTACT
+  ========================== -->
+  <section class="content contact">
+    <h2>Contact</h2>
 
-    <footer class="footer">
-      © 2026 Crawford Solutions LLC
-    </footer>
-  </main>
+    <p>
+      For pilots, demos, or collaboration:
+      <a href="mailto:info@crawfordsolutionsllc.com">
+        info@crawfordsolutionsllc.com
+      </a>
+    </p>
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer>
+    <p>© 2026 Crawford Solutions LLC</p>
+  </footer>
+
 </body>
 </html>
