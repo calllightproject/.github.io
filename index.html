@@ -4,47 +4,226 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crawford Solutions</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root{
+      --ink:#0f172a;
+      --muted:#475569;
+      --brand:#2b8ccf;
+      --card:rgba(255,255,255,0.92);
+      --line:rgba(15,23,42,0.10);
+      --shadow:0 28px 70px rgba(15,23,42,0.10);
+      --radius:24px;
+      --max: 980px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      line-height:1.6;
+
+      /* FULL background from your image */
+      background:
+        linear-gradient(rgba(248,251,255,0.92), rgba(248,251,255,0.92)),
+        url("images/logo.jpg");
+      background-repeat:no-repeat;
+      background-position:center top;
+      background-size:cover;
+      background-attachment:fixed;
+    }
+
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    /* BIG logo header */
+    header{
+      padding:48px 0 10px;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* Use your existing logo image but crop out the black bars */
+    .top-logo{
+      width: 760px;           /* VERY big */
+      max-width: 95vw;        /* responsive */
+      height: auto;
+
+      /* crop left/right black bars + a little top/bottom */
+      clip-path: inset(0 14% 0 14%);
+      border-radius: 18px;
+    }
+
+    main{
+      padding: 18px 0 70px;
+    }
+
+    /* Hero card */
+    .hero{
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-card{
+      width:100%;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding: 46px 34px;
+      text-align:center;
+      margin-top: 10px;
+    }
+
+    h1{
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing:-0.02em;
+      margin-bottom: 10px;
+    }
+
+    .tagline{
+      color:var(--muted);
+      max-width: 720px;
+      margin: 0 auto 26px;
+      font-size: 16px;
+    }
+
+    .btn-row{
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 600;
+      font-size: 14px;
+      border:1px solid transparent;
+      transition: transform .08s ease, background .2s ease;
+    }
+
+    .btn:hover{ transform: translateY(-1px); }
+
+    .btn.primary{
+      background: var(--brand);
+      color: #fff;
+      border-color: rgba(43,140,207,0.25);
+    }
+
+    .btn.primary:hover{ background:#2378b3; }
+
+    .btn.secondary{
+      background: rgba(255,255,255,0.85);
+      color: var(--ink);
+      border-color: rgba(15,23,42,0.14);
+    }
+
+    .btn.secondary:hover{ background: rgba(255,255,255,1); }
+
+    /* Sections */
+    section{
+      padding: 52px 0 0;
+      text-align:center;
+    }
+
+    h2{
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing:-0.02em;
+    }
+
+    p{
+      color:var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+
+    ul{
+      list-style: disc;
+      list-style-position: inside;
+      max-width: 720px;
+      margin: 18px auto 0;
+      text-align:left;
+      color: var(--muted);
+      background: rgba(255,255,255,0.65);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+    }
+
+    li{ margin: 10px 0; }
+
+    li strong{ color: var(--ink); }
+
+    a{ color: var(--brand); }
+
+    footer{
+      margin-top: 60px;
+      padding: 20px 0 30px;
+      text-align:center;
+      color: rgba(15,23,42,0.55);
+      font-size: 13px;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 640px){
+      .top-logo{
+        width: 95vw;
+        clip-path: inset(0 10% 0 10%);
+      }
+      h1{ font-size: 34px; }
+      .hero-card{ padding: 34px 20px; }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Top logo only -->
-  <header class="site-header">
-    <img
-      src="images/logo.jpg"
-      alt="Crawford Solutions logo"
-      class="top-logo"
-    />
+  <!-- VERY big logo at top -->
+  <header>
+    <img src="images/logo.jpg" alt="Crawford Solutions logo" class="top-logo">
   </header>
 
-  <!-- Hero card -->
-  <main>
+  <main class="container">
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-card">
         <h1>Crawford Solutions</h1>
         <p class="tagline">
-          Nurse-built healthcare workflow systems designed for efficiency,
-          clarity, and care.
+          Nurse-built healthcare workflow systems designed for efficiency, clarity, and care.
         </p>
 
-        <div class="hero-buttons">
-          <a href="#careconnect" class="btn primary">CareConnect</a>
-          <a href="#contact" class="btn secondary">Request demo</a>
+        <div class="btn-row">
+          <a class="btn primary" href="#careconnect">CareConnect</a>
+          <a class="btn secondary" href="#contact">Request demo</a>
         </div>
       </div>
     </section>
 
-    <section id="careconnect" class="content">
+    <!-- CareConnect -->
+    <section id="careconnect">
       <h2>CareConnect</h2>
       <p>
-        A digital patient request and triage layer designed to standardize
-        request capture, support prioritization of time-sensitive versus
-        routine needs, and route requests by role — without replacing
-        established safety pathways.
+        A digital patient request and triage layer designed to standardize request capture,
+        support prioritization of time-sensitive versus routine needs, and route requests by role —
+        without replacing established safety pathways.
       </p>
     </section>
 
-    <section class="content">
+    <!-- Focus -->
+    <section>
       <h2>What we focus on</h2>
       <ul>
         <li><strong>Efficiency:</strong> reducing ambiguity and unnecessary back-and-forth.</li>
@@ -53,19 +232,16 @@
       </ul>
     </section>
 
-    <section id="contact" class="content">
+    <!-- Contact -->
+    <section id="contact">
       <h2>Contact</h2>
       <p>
         For pilots, demos, or collaboration:
-        <a href="mailto:info@crawfordsolutionsllc.com">
-          info@crawfordsolutionsllc.com
-        </a>
+        <a href="mailto:info@crawfordsolutionsllc.com">info@crawfordsolutionsllc.com</a>
       </p>
     </section>
-  </main>
 
-  <footer>
-    © 2026 Crawford Solutions LLC
-  </footer>
+    <footer>© 2026 Crawford Solutions LLC</footer>
+  </main>
 </body>
 </html>
