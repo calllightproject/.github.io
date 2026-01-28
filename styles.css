@@ -32,6 +32,7 @@ body {
   align-items: center;
   padding: 2.5rem 1rem 2rem;
   background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -109,10 +110,17 @@ body {
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
 }
 
-.btn.primary:hover {
+.btn.primary:hover,
+.btn.primary:focus {
   background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
   transform: translateY(-2px);
+  outline: none;
+}
+
+.btn.primary:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 .btn.secondary {
@@ -122,11 +130,18 @@ body {
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
-.btn.secondary:hover {
+.btn.secondary:hover,
+.btn.secondary:focus {
   background: #f8fafc;
   border-color: #94a3b8;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
   transform: translateY(-2px);
+  outline: none;
+}
+
+.btn.secondary:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 /* =========================
@@ -139,6 +154,7 @@ body {
   padding: 4rem 2rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   margin-bottom: 2rem;
@@ -204,9 +220,17 @@ body {
   border-bottom: 2px solid transparent;
 }
 
-.contact a:hover {
+.contact a:hover,
+.contact a:focus {
   color: #1e40af;
   border-bottom: 2px solid #2563eb;
+  outline: none;
+}
+
+.contact a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* =========================
@@ -219,6 +243,7 @@ footer {
   color: #64748b;
   font-size: 0.95rem;
   background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(226, 232, 240, 0.5);
   margin-top: 2rem;
