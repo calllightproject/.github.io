@@ -1,247 +1,322 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Crawford Solutions</title>
+  <meta name="description" content="Nurse-built clinical workflow product — CareConnect. Calm, clinical, and efficient healthcare technology." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Crawford Solutions" />
+  <meta property="og:description" content="Nurse-built clinical workflow product — CareConnect. Calm, clinical, and efficient healthcare technology." />
+  <meta property="og:image" content="https://calllightproject.github.io/images/logo.jpg" />
+  <meta property="og:url" content="https://calllightproject.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicons (add files to the repo if not present) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#2b8ccf" />
 
   <style>
     :root{
-      --ink:#0f172a;
-      --muted:#475569;
-      --brand:#2b8ccf;
-      --card:rgba(255,255,255,0.92);
-      --line:rgba(15,23,42,0.10);
-      --shadow:0 28px 70px rgba(15,23,42,0.10);
-      --radius:24px;
+      --ink: #0f172a;        /* slate */
+      --muted: #475569;      /* slate-muted */
+      --brand: #2b8ccf;      /* calm light blue */
+      --card: rgba(255,255,255,0.94);
+      --line: rgba(15,23,42,0.06);
+      --radius: 18px;
+      --shadow: 0 20px 50px rgba(2,6,23,0.08);
       --max: 980px;
+      --gutter: 20px;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
+    /* Reset */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color:var(--ink);
-      line-height:1.6;
+      line-height:1.5;
+      background-color:#f6f9fc;
+      position:relative;
+      min-height:100vh;
 
-      /* FULL background from your image */
-      background:
-        linear-gradient(rgba(248,251,255,0.92), rgba(248,251,255,0.92)),
-        url("images/logo.jpg");
-      background-repeat:no-repeat;
-      background-position:center top;
-      background-size:cover;
-      background-attachment:fixed;
+      /* Full-page background using the logo image */
+      background-image: url("images/logo.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
     }
 
-    .container{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 20px;
+    /* translucent overlay + blur so text remains readable */
+    body::before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(246,249,252,0.86), rgba(246,249,252,0.86));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    /* BIG logo header */
-    header{
-      padding:48px 0 10px;
+    .page{
+      position: relative;
+      z-index: 1; /* above the overlay */
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px var(--gutter) 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      min-height: 100vh;
+    }
+
+    header[role="banner"]{
+      width:100%;
       display:flex;
       justify-content:center;
+      align-items:center;
+      padding-top: 28px;
     }
 
-    /* Use your existing logo image but crop out the black bars */
+    /* Prominent logo at top center, responsive without fixed pixels */
     .top-logo{
-      width: 760px;           /* VERY big */
-      max-width: 95vw;        /* responsive */
+      display:block;
+      width: clamp(220px, 45vw, 820px); /* prominent on large screens, responsive */
+      max-width: 95%;
       height: auto;
-
-      /* crop left/right black bars + a little top/bottom */
-      clip-path: inset(0 14% 0 14%);
-      border-radius: 18px;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+      background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.35)); /* soft sheen */
     }
 
     main{
-      padding: 18px 0 70px;
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap: 36px;
+      padding-top: 6px;
     }
 
-    /* Hero card */
+    /* Hero card centered */
     .hero{
+      width:100%;
       display:flex;
       justify-content:center;
     }
 
     .hero-card{
       width:100%;
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding: 46px 34px;
+      max-width: 920px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4.5vw, 48px);
       text-align:center;
-      margin-top: 10px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
     }
 
     h1{
-      font-size: 44px;
-      font-weight: 800;
+      margin:0;
+      font-size: clamp(26px, 4.2vw, 48px);
+      font-weight:800;
       letter-spacing:-0.02em;
-      margin-bottom: 10px;
+      line-height:1.1;
     }
 
     .tagline{
+      margin:0 auto;
       color:var(--muted);
-      max-width: 720px;
-      margin: 0 auto 26px;
-      font-size: 16px;
+      font-size: clamp(14px, 1.6vw, 17px);
+      max-width: 760px;
     }
 
     .btn-row{
       display:flex;
-      gap: 12px;
+      gap:12px;
       justify-content:center;
       flex-wrap:wrap;
-      margin-top: 6px;
+      margin-top:6px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      gap:10px;
       padding: 12px 18px;
       border-radius: 999px;
       text-decoration:none;
-      font-weight: 600;
-      font-size: 14px;
-      border:1px solid transparent;
-      transition: transform .08s ease, background .2s ease;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      border: 1px solid transparent;
+      min-height:44px;
     }
-
-    .btn:hover{ transform: translateY(-1px); }
+    .btn:focus{ outline: 3px solid rgba(43,140,207,0.18); outline-offset:3px; }
 
     .btn.primary{
-      background: var(--brand);
+      background: linear-gradient(180deg, var(--brand), #1f78a9);
       color: #fff;
-      border-color: rgba(43,140,207,0.25);
+      box-shadow: 0 10px 30px rgba(43,140,207,0.12);
     }
-
-    .btn.primary:hover{ background:#2378b3; }
+    .btn.primary:hover{ transform: translateY(-3px); }
 
     .btn.secondary{
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.9);
       color: var(--ink);
-      border-color: rgba(15,23,42,0.14);
+      border: 1px solid rgba(15,23,42,0.08);
     }
-
-    .btn.secondary:hover{ background: rgba(255,255,255,1); }
+    .btn.secondary:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(2,6,23,0.04); }
 
     /* Sections */
     section{
-      padding: 52px 0 0;
-      text-align:center;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      padding: 18px 0 0;
     }
 
-    h2{
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing:-0.02em;
+    .card{
+      width:100%;
+      max-width: 820px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(2,6,23,0.04);
+      padding: 22px;
+      text-align:left;
     }
 
-    p{
+    .card h2{
+      margin:0 0 8px 0;
+      font-size:20px;
+      font-weight:800;
+      color:var(--ink);
+      text-align:left;
+    }
+
+    .card p{
+      margin:0;
       color:var(--muted);
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 15px;
+      font-size:15px;
     }
 
-    ul{
+    .focus-list{
       list-style: disc;
       list-style-position: inside;
-      max-width: 720px;
-      margin: 18px auto 0;
-      text-align:left;
-      color: var(--muted);
-      background: rgba(255,255,255,0.65);
+      margin:12px 0 0;
+      padding:12px 16px;
+      background: rgba(255,255,255,0.97);
+      border-radius:12px;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px 20px;
+      color:var(--muted);
     }
 
-    li{ margin: 10px 0; }
+    .focus-list li{ margin:10px 0; font-size:15px; }
+    .focus-list strong{ color:var(--ink); }
 
-    li strong{ color: var(--ink); }
-
-    a{ color: var(--brand); }
+    .contact-centered{
+      text-align:center;
+    }
+    .contact-centered a{ color:var(--brand); text-decoration:none; font-weight:600; }
+    .contact-centered a:hover{ text-decoration:underline; }
 
     footer{
-      margin-top: 60px;
-      padding: 20px 0 30px;
+      width:100%;
       text-align:center;
       color: rgba(15,23,42,0.55);
-      font-size: 13px;
+      font-size:13px;
+      margin-top: 6px;
+      padding-bottom: 10px;
     }
 
-    /* Mobile tweaks */
-    @media (max-width: 640px){
-      .top-logo{
-        width: 95vw;
-        clip-path: inset(0 10% 0 10%);
-      }
-      h1{ font-size: 34px; }
-      .hero-card{ padding: 34px 20px; }
+    /* Responsive tweaks */
+    @media (max-width:720px){
+      .card{ padding:18px; }
+      .hero-card{ padding:22px; }
+      .top-logo{ width: clamp(200px, 60vw, 700px); }
+      .page{ padding: 18px 16px 48px; gap:20px; }
+    }
+
+    @media (max-width:420px){
+      .hero-card{ padding:16px; gap:10px; }
+      .btn{ padding:10px 14px; font-size:13px; min-height:40px; }
+      .focus-list{ padding:10px 12px; }
     }
   </style>
 </head>
-
 <body>
-  <!-- VERY big logo at top -->
-  <header>
-    <img src="images/logo.jpg" alt="Crawford Solutions logo" class="top-logo">
-  </header>
+  <div class="page">
+    <header class="header">
+      <img src="images/logo.jpg" alt="Crawford Solutions logo" class="top-logo" />
+    </header>
 
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-card">
-        <h1>Crawford Solutions</h1>
-        <p class="tagline">
-          Nurse-built healthcare workflow systems designed for efficiency, clarity, and care.
-        </p>
+    <main aria-labelledby="hero-heading">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-card">
+          <h1 id="hero-heading">Crawford Solutions</h1>
+          <p class="tagline">
+            Nurse-built clinical workflow software for calmer, clearer care. Designed to reduce ambiguity, protect clinical time, and improve patient experience.
+          </p>
 
-        <div class="btn-row">
-          <a class="btn primary" href="#careconnect">CareConnect</a>
-          <a class="btn secondary" href="#contact">Request demo</a>
+          <div class="btn-row">
+            <a class="btn primary" href="#careconnect">CareConnect</a>
+            <a class="btn secondary" href="#contact">Request demo</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CareConnect -->
-    <section id="careconnect">
-      <h2>CareConnect</h2>
-      <p>
-        A digital patient request and triage layer designed to standardize request capture,
-        support prioritization of time-sensitive versus routine needs, and route requests by role —
-        without replacing established safety pathways.
-      </p>
-    </section>
+      <!-- Product / CareConnect -->
+      <section id="careconnect" aria-labelledby="careconnect-heading">
+        <div class="card" aria-describedby="careconnect-desc">
+          <h2 id="careconnect-heading">CareConnect</h2>
+          <p id="careconnect-desc">
+            CareConnect is a digital patient request and triage layer that standardizes request capture, helps prioritize time-sensitive needs, and routes tasks by role — all while preserving clinical safety pathways.
+          </p>
+        </div>
+      </section>
 
-    <!-- Focus -->
-    <section>
-      <h2>What we focus on</h2>
-      <ul>
-        <li><strong>Efficiency:</strong> reducing ambiguity and unnecessary back-and-forth.</li>
-        <li><strong>Care:</strong> supporting teams and patients with calmer, clearer workflows.</li>
-        <li><strong>Equity:</strong> designing for language and communication barriers.</li>
-      </ul>
-    </section>
+      <!-- Focus -->
+      <section aria-labelledby="focus-heading">
+        <div class="card" aria-describedby="focus-desc">
+          <h2 id="focus-heading">What we focus on</h2>
+          <p id="focus-desc">Practical improvements that matter for clinicians and patients.</p>
+          <ul class="focus-list">
+            <li><strong>Efficiency:</strong> reduce ambiguity and unnecessary back-and-forth so care teams can act sooner.</li>
+            <li><strong>Care:</strong> support staff and patients with workflows that preserve clinical time and calm the environment.</li>
+            <li><strong>Equity:</strong> design for language and communication differences to improve access for all patients.</li>
+          </ul>
+        </div>
+      </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        For pilots, demos, or collaboration:
-        <a href="mailto:info@crawfordsolutionsllc.com">info@crawfordsolutionsllc.com</a>
-      </p>
-    </section>
+      <!-- Contact -->
+      <section id="contact" aria-labelledby="contact-heading">
+        <div class="card contact-centered" aria-describedby="contact-desc">
+          <h2 id="contact-heading">Contact</h2>
+          <p id="contact-desc">
+            For pilots, demos, or collaboration, reach out:
+            <br />
+            <a href="mailto:info@crawfordsolutionsllc.com">info@crawfordsolutionsllc.com</a>
+          </p>
+        </div>
+      </section>
 
-    <footer>© 2026 Crawford Solutions LLC</footer>
-  </main>
+      <footer>© 2026 Crawford Solutions LLC</footer>
+    </main>
+  </div>
 </body>
 </html>
