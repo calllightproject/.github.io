@@ -1,73 +1,92 @@
-/* ---------- RESET ---------- */
+
+/* =========================
+   RESET & BASE
+========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  background: #f7fafc;
-  color: #1f2937;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+  background: #f8fbff;
   line-height: 1.6;
 }
 
-/* ---------- HERO SECTION ---------- */
-.hero {
-  min-height: 100vh;
+/* =========================
+   TOP LOGO
+========================= */
+
+.logo-wrap {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 3rem 1rem;
+  align-items: center;
+  padding: 3rem 1rem 1.5rem;
 }
 
-/* ONE unified box */
+.main-logo {
+  height: 350px;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+}
+
 .hero-card {
   background: #ffffff;
   max-width: 900px;
   width: 100%;
-  padding: 3.5rem 2.5rem;
-  border-radius: 24px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
   text-align: center;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
 }
 
-/* LOGO */
-.hero-logo {
-  height: 350px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  margin-bottom: 2rem;
-}
-
-/* HEADLINE */
 .hero-card h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-/* SUBTITLE */
 .hero-subtitle {
-  font-size: 1.1rem;
-  color: #4b5563;
-  max-width: 600px;
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 650px;
   margin: 0 auto 2rem;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
+
 .hero-buttons {
   display: flex;
-  justify-content: center;
   gap: 1rem;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.75rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 999px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -81,75 +100,94 @@ body {
 }
 
 .btn.primary:hover {
-  background: #1e40af;
+  background: #1e4fd8;
 }
 
 .btn.secondary {
-  border: 1px solid #d1d5db;
-  color: #1f2937;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
   background: #ffffff;
 }
 
 .btn.secondary:hover {
-  background: #f3f4f6;
+  background: #f1f5f9;
 }
 
-/* ---------- CONTENT SECTIONS ---------- */
+/* =========================
+   CONTENT SECTIONS
+========================= */
+
 .content {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
   text-align: center;
 }
 
 .content h2 {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
 .content p {
-  color: #4b5563;
-  font-size: 1rem;
+  color: #475569;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-/* FOCUS LIST */
+/* =========================
+   FOCUS LIST
+========================= */
+
 .focus-list {
-  list-style: none;
-  margin-top: 1.5rem;
+  list-style: disc;
+  margin: 1.5rem auto 0;
+  padding-left: 1.2rem;
+  max-width: 520px;
+  text-align: left;
 }
 
 .focus-list li {
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #334155;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
+
 .contact a {
   color: #2563eb;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .contact a:hover {
   text-decoration: underline;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 footer {
+  padding: 2rem 1rem 3rem;
   text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.85rem;
-  color: #6b7280;
+  color: #64748b;
+  font-size: 0.9rem;
 }
 
-/* ---------- MOBILE ---------- */
-@media (max-width: 768px) {
-  .hero-card {
-    padding: 2.5rem 1.5rem;
+/* =========================
+   MOBILE TWEAKS
+========================= */
+
+@media (max-width: 600px) {
+  .main-logo {
+    height: 240px;
   }
 
-  .hero-logo {
-    height: 240px;
+  .hero-card {
+    padding: 2rem 1.5rem;
   }
 
   .hero-card h1 {
