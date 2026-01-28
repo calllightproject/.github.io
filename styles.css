@@ -1,215 +1,220 @@
-/* styles.css */
+/* =========================
+   Base / Reset
+========================= */
 
-/* ===============================
-   Base reset
-================================ */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root{
-  --ink:#0f172a;
-  --muted:#475569;
-  --brand:#2b8ccf;
-
-  --card:rgba(255,255,255,0.92);
-  --line:rgba(15,23,42,0.10);
-  --shadow:0 28px 70px rgba(15,23,42,0.10);
-  --radius:24px;
-
-  --max: 980px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* ===============================
-   Background (new image, faded)
-================================ */
-html, body{
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-  color: var(--ink);
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+  background: #f8fbff;
   line-height: 1.6;
-  min-height: 100%;
-
-  /* Use the new image as full-page background + soft overlay for readability */
-  background:
-    linear-gradient(rgba(248,251,255,0.92), rgba(248,251,255,0.92)),
-    url("images/real-logo-use.jpeg");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
-/* ===============================
-   Container
-================================ */
-.container{
-  max-width: var(--max);
+/* =========================
+   Layout Helpers
+========================= */
+
+.container {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
-/* ===============================
-   Top hero image
-================================ */
-.top-hero{
-  padding: 42px 0 14px;
+/* =========================
+   Header (clean + calm)
+========================= */
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6eef7;
+}
+
+.header-inner {
   display: flex;
-  justify-content: center;
-}
-
-.hero-logo{
-  width: 820px;       /* big */
-  max-width: 96vw;    /* responsive */
-  height: auto;
-  display: block;
-
-  /* subtle polish */
-  border-radius: 18px;
-  box-shadow: 0 18px 50px rgba(15,23,42,0.10);
-}
-
-/* ===============================
-   Main layout
-================================ */
-main{
-  padding: 16px 0 70px;
-}
-
-/* ===============================
-   Hero card
-================================ */
-.hero{
-  display: flex;
-  justify-content: center;
-}
-
-.hero-card{
-  width: 100%;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 46px 34px;
-  text-align: center;
-  margin-top: 10px;
-}
-
-h1{
-  font-size: 44px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 10px;
-}
-
-.tagline{
-  color: var(--muted);
-  max-width: 720px;
-  margin: 0 auto 26px;
-  font-size: 16px;
-}
-
-/* ===============================
-   Buttons
-================================ */
-.btn-row{
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 6px;
-}
-
-.btn{
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 12px 18px;
-  border-radius: 999px;
-  text-decoration: none;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  height: 48px;
+  width: auto;
+}
+
+.brand-name {
+  font-size: 18px;
   font-weight: 600;
+  color: #0f172a;
+}
+
+.header-cta {
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
   font-size: 14px;
-  border: 1px solid transparent;
-  transition: transform .08s ease, background .2s ease;
+  font-weight: 500;
+  background: #2b83d7;
+  color: #ffffff;
 }
 
-.btn:hover{ transform: translateY(-1px); }
-
-.btn.primary{
-  background: var(--brand);
-  color: #fff;
-  border-color: rgba(43,140,207,0.25);
+.header-cta:hover {
+  background: #1f6fb8;
 }
 
-.btn.primary:hover{ background:#2378b3; }
+/* =========================
+   Hero
+========================= */
 
-.btn.secondary{
-  background: rgba(255,255,255,0.90);
-  color: var(--ink);
-  border-color: rgba(15,23,42,0.14);
+.hero {
+  padding: 80px 0 60px;
+  display: flex;
+  justify-content: center;
 }
 
-.btn.secondary:hover{ background: rgba(255,255,255,1); }
-
-/* ===============================
-   Sections
-================================ */
-.section{
-  padding: 52px 0 0;
+.hero-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 56px;
+  max-width: 760px;
+  width: 100%;
   text-align: center;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
 }
 
-h2{
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
+.hero-card h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 12px;
 }
 
-p{
-  color: var(--muted);
+.tagline {
+  font-size: 17px;
+  color: #475569;
+  margin: 0 0 28px;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.btn.primary {
+  background: #2b83d7;
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background: #1f6fb8;
+}
+
+.btn.secondary {
+  background: #ffffff;
+  color: #2b83d7;
+  border: 1px solid #d6e4f2;
+}
+
+.btn.secondary:hover {
+  background: #f1f6fb;
+}
+
+/* =========================
+   Sections
+========================= */
+
+.section {
+  padding: 56px 0;
   max-width: 760px;
   margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.section p {
+  color: #475569;
   font-size: 15px;
 }
 
-a{ color: var(--brand); }
+/* =========================
+   Focus List
+========================= */
 
-/* Focus list */
-.focus{
-  list-style: disc;
-  list-style-position: inside;
-  max-width: 720px;
-  margin: 18px auto 0;
-  text-align: left;
-
-  color: var(--muted);
-  background: rgba(255,255,255,0.65);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 18px 20px;
+.focus {
+  margin: 16px 0 0;
+  padding-left: 18px;
 }
 
-.focus li{ margin: 10px 0; }
-.focus li strong{ color: var(--ink); }
+.focus li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
 
-/* ===============================
+.focus strong {
+  color: #0f172a;
+}
+
+/* =========================
    Footer
-================================ */
-.footer{
-  margin-top: 60px;
-  padding: 20px 0 30px;
+========================= */
+
+.footer {
+  border-top: 1px solid #e6eef7;
+  margin-top: 64px;
+  padding: 24px 0 32px;
   text-align: center;
-  color: rgba(15,23,42,0.55);
   font-size: 13px;
+  color: #64748b;
 }
 
-/* ===============================
-   Mobile tweaks
-================================ */
-@media (max-width: 640px){
-  .hero-logo{
-    width: 96vw;
-    border-radius: 14px;
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 640px) {
+  .hero-card {
+    padding: 36px 28px;
   }
 
-  h1{ font-size: 34px; }
-  .hero-card{ padding: 34px 20px; }
+  .hero-card h1 {
+    font-size: 32px;
+  }
+
+  .brand-name {
+    display: none; /* keeps header clean on phone */
+  }
 }
