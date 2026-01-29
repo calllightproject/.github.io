@@ -50,8 +50,8 @@ body::before {
 }
 
 .main-logo {
-  max-height: 180px;
-  max-width: 480px;
+  max-height: 540px;
+  max-width: 1440px;
   height: auto;
   object-fit: contain;
 }
@@ -264,8 +264,8 @@ footer {
 
 @media (max-width: 600px) {
   .main-logo {
-    max-height: 108px;
-    max-width: 288px;
+    max-height: 324px;
+    max-width: 864px;
   }
 
   .hero-card {
