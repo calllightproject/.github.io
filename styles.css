@@ -44,17 +44,16 @@ body::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1rem 1rem;
   background: #ffffff;
-  overflow: hidden;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .main-logo {
-  width: 120%;
-  max-width: none;
+  max-height: 100px;
+  max-width: 320px;
   height: auto;
-  object-fit: cover;
-  clip-path: inset(0 18% 0 18%);
+  object-fit: contain;
 }
 
 /* =========================
@@ -265,7 +264,8 @@ footer {
 
 @media (max-width: 600px) {
   .main-logo {
-    width: 160%;
+    max-height: 60px;
+    max-width: 200px;
   }
 
   .hero-card {
