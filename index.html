@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Crawford Solutions</title>
 
-  <meta name="description" content="Nurse-built healthcare workflow systems designed for efficiency, clarity, and care." />
+  <meta name="description" content="Modular clinical workflow layer designed to standardize patient request capture and integrate with existing healthcare communication systems." />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,7 +13,7 @@
 <body>
 
   <!-- =========================
-       LARGE LOGO AT TOP
+       LOGO
   ========================== -->
   <div class="logo-wrap">
     <img
@@ -24,37 +24,117 @@
   </div>
 
   <!-- =========================
-       HERO CARD
+       HERO
   ========================== -->
   <section class="hero">
     <div class="hero-card">
       <h1>Crawford Solutions</h1>
 
       <p class="hero-subtitle">
-        Nurse-built healthcare workflow systems designed for efficiency, clarity, and care.
+        A modular digital workflow layer that standardizes patient request capture,
+        supports role-based routing, and integrates with existing communication infrastructure.
       </p>
 
       <div class="hero-buttons">
         <a href="#careconnect" class="btn primary">CareConnect</a>
-
-        <!-- Demo button now reveals embedded video below -->
         <button id="demoBtn" type="button" class="btn secondary">
-          Demo
+          View 3-Minute Demo
         </button>
       </div>
     </div>
   </section>
 
   <!-- =========================
-       CARECONNECT SECTION
+       CARECONNECT OVERVIEW
   ========================== -->
   <section id="careconnect" class="content">
     <h2>CareConnect</h2>
 
     <p>
-      A digital patient request and triage layer designed to standardize request capture,
-      support prioritization of time-sensitive versus routine needs, and route requests
-      by role — without replacing established safety pathways.
+      CareConnect is a structured digital intake layer designed to standardize
+      patient request capture before escalation through existing nurse call and
+      communication systems.
+    </p>
+
+    <p>
+      It enhances — rather than replaces — established infrastructure by introducing:
+    </p>
+
+    <ul class="focus-list">
+      <li>Structured request selection</li>
+      <li>Role-based routing logic</li>
+      <li>Time-sensitive prioritization support</li>
+      <li>Language-accessible intake options</li>
+    </ul>
+  </section>
+
+  <!-- =========================
+       CLINICAL WORKFLOW GAP
+  ========================== -->
+  <section class="content">
+    <h2>The Clinical Workflow Gap</h2>
+
+    <p>
+      In many hospital environments, patient requests are transmitted through
+      unstructured channels. This can result in ambiguity, role confusion,
+      inefficient routing, and limited visibility into response performance.
+    </p>
+
+    <p>
+      CareConnect addresses this gap by standardizing intake at the source —
+      before requests enter downstream communication systems.
+    </p>
+  </section>
+
+  <!-- =========================
+       INTEGRATION MODEL
+  ========================== -->
+  <section class="content">
+    <h2>Integration Model</h2>
+
+    <ul class="focus-list">
+      <li>Designed as a lightweight digital intake layer</li>
+      <li>Compatible with existing nurse call and messaging platforms</li>
+      <li>Supports API, webhook, or configurable routing logic integration</li>
+      <li>Does not replace established emergency or safety escalation pathways</li>
+    </ul>
+  </section>
+
+  <!-- =========================
+       PARTNERSHIP OPPORTUNITIES
+  ========================== -->
+  <section class="content">
+    <h2>Vendor Partnership Opportunities</h2>
+
+    <p>
+      CareConnect is positioned to enhance existing healthcare communication
+      ecosystems by introducing structured intake intelligence prior to
+      message escalation.
+    </p>
+
+    <ul class="focus-list">
+      <li>Enhances nurse communication platforms</li>
+      <li>Adds structured intake before task escalation</li>
+      <li>Supports cleaner analytics and response tracking</li>
+      <li>Introduces configurable role-based routing intelligence</li>
+      <li>Expands accessibility through language-inclusive request entry</li>
+    </ul>
+  </section>
+
+  <!-- =========================
+       BUILT FROM FRONTLINE
+  ========================== -->
+  <section class="content">
+    <h2>Built From the Frontline</h2>
+
+    <p>
+      CareConnect was developed by a clinical workflow specialist with
+      over 10 years of frontline nursing experience.
+    </p>
+
+    <p>
+      The system combines bedside insight with systems-level workflow thinking,
+      designed to align with health system infrastructure requirements.
     </p>
   </section>
 
@@ -62,28 +142,18 @@
        DEMO SECTION (HIDDEN UNTIL CLICK)
   ========================== -->
   <section id="demoSection" class="content demo hidden" aria-hidden="true">
-    <h2>CareConnect Demo</h2>
+    <h2>CareConnect Demonstration</h2>
+
+    <p style="margin-bottom: 1rem; color: #475569;">
+      3-minute overview demonstration of structured intake and routing model.
+    </p>
 
     <video id="demoVideo" controls playsinline preload="metadata" width="100%">
       <source
         src="https://dl.dropboxusercontent.com/scl/fi/k7jtv5o8ubcvu3prgxwcq/CareConnect_1.mp4?rlkey=93k6b7ob2gp3avph25u5fy145"
         type="video/mp4"
       />
-      Your browser does not support the video tag.
     </video>
-  </section>
-
-  <!-- =========================
-       FOCUS SECTION
-  ========================== -->
-  <section class="content">
-    <h2>What we focus on</h2>
-
-    <ul class="focus-list">
-      <li><strong>Efficiency:</strong> reducing ambiguity and unnecessary back-and-forth.</li>
-      <li><strong>Care:</strong> supporting teams and patients with calmer, clearer workflows.</li>
-      <li><strong>Equity:</strong> designing for language and communication barriers.</li>
-    </ul>
   </section>
 
   <!-- =========================
@@ -93,7 +163,8 @@
     <h2>Contact</h2>
 
     <p>
-      For pilots, demos, or collaboration:
+      For vendor partnerships, pilot discussions, or integration conversations:
+      <br />
       <a href="mailto:info@crawfordsolutionsllc.com">
         info@crawfordsolutionsllc.com
       </a>
@@ -107,6 +178,9 @@
     <p>© 2025 Crawford Solutions LLC</p>
   </footer>
 
+  <!-- =========================
+       DEMO SCRIPT
+  ========================== -->
   <script>
     const btn = document.getElementById("demoBtn");
     const section = document.getElementById("demoSection");
@@ -115,11 +189,8 @@
     btn?.addEventListener("click", () => {
       section.classList.remove("hidden");
       section.setAttribute("aria-hidden", "false");
-
       section.scrollIntoView({ behavior: "smooth", block: "start" });
 
-      // Try to play (some browsers may block autoplay without user gesture;
-      // this click counts as a gesture, so it often works)
       try { video.play(); } catch (e) {}
     });
   </script>
