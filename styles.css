@@ -17,12 +17,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
   color: #0f2f4a;
-  background: #f6fbff; /* calmer, more enterprise */
+  background: #f6fbff;
   line-height: 1.55;
   overflow-x: hidden;
 }
 
-/* Utility */
 .hidden { display: none; }
 
 
@@ -173,17 +172,9 @@ button.btn {
   line-height: 1.75;
 }
 
-/* Demo video styling */
-.demo video {
-  width: 100%;
-  margin-top: 1.15rem;
-  border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-}
-
 
 /* =========================
-   LISTS (Focus bullets)
+   LISTS
 ========================= */
 
 .focus-list {
@@ -207,9 +198,71 @@ button.btn {
   content: "•";
   position: absolute;
   left: 0;
-  color: #2e86c1; /* toned down, enterprise */
+  color: #2e86c1;
   font-weight: 900;
   font-size: 1.15rem;
+}
+
+
+/* =========================
+   DEMO VIDEO
+========================= */
+
+.demo video {
+  width: 100%;
+  margin-top: 1.15rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================
+   INTEGRATION DIAGRAM
+========================= */
+
+.integration-diagram {
+  text-align: center;
+}
+
+.diagram-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.diagram-box {
+  background: #f9fcff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  padding: 1.5rem 1.2rem;
+  border-radius: 14px;
+  width: 220px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+}
+
+.diagram-box h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #0f2f4a;
+}
+
+.diagram-box p {
+  font-size: 0.9rem;
+  color: #41576d;
+  line-height: 1.5;
+}
+
+.diagram-box.highlight {
+  background: #eaf6ff;
+  border: 1.5px solid #4aa3df;
+}
+
+.diagram-arrow {
+  font-size: 1.5rem;
+  color: #2e86c1;
+  font-weight: bold;
 }
 
 
@@ -247,7 +300,7 @@ footer {
    MOBILE OPTIMIZATION
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
   .logo-wrap {
     padding: 0.7rem 1rem;
@@ -298,5 +351,13 @@ footer {
 
   .focus-list {
     max-width: 100%;
+  }
+
+  .diagram-row {
+    flex-direction: column;
+  }
+
+  .diagram-arrow {
+    transform: rotate(90deg);
   }
 }
