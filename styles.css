@@ -40,9 +40,9 @@ body {
 }
 
 .main-logo {
-  width: min(100%, 700px);
+  width: min(100%, 600px);
   height: auto;
-  max-height: 220px;
+  max-height: 180px;
   object-fit: contain;
 }
 
@@ -62,15 +62,14 @@ body {
   max-width: 900px;
   width: 100%;
   padding: 3rem 2.5rem;
-  border-radius: 24px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12),
-              0 5px 15px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .hero-card h1 {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: #1a3a5c;
@@ -78,10 +77,10 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #475569;
   max-width: 650px;
-  margin: 0 auto 2.2rem;
+  margin: 0 auto 2rem;
   line-height: 1.7;
 }
 
@@ -101,7 +100,7 @@ body {
   display: inline-block;
   padding: 0.85rem 2rem;
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.25s ease;
@@ -126,7 +125,7 @@ button.btn {
 
 .btn.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(93, 173, 226, 0.45);
+  box-shadow: 0 6px 18px rgba(93, 173, 226, 0.45);
 }
 
 .btn.secondary {
@@ -149,36 +148,35 @@ button.btn {
 .content {
   max-width: 900px;
   margin: 0 auto 2rem;
-  padding: 3.5rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(10px);
+  background: #ffffff; /* solid white for enterprise feel */
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
-  border: 1px solid rgba(226, 232, 240, 0.5);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .content h2 {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.2rem;
   color: #1a3a5c;
 }
 
 .content p {
   color: #475569;
   max-width: 720px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.8;
+  margin: 0 auto 1rem;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 /* Demo video styling */
 .demo video {
   width: 100%;
   margin-top: 1.25rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
 
@@ -188,23 +186,23 @@ button.btn {
 
 .focus-list {
   list-style: none;
-  margin: 2rem auto 0;
+  margin: 1.5rem auto 0;
   padding: 0;
   max-width: 600px;
   text-align: left;
 }
 
 .focus-list li {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   color: #334155;
-  padding-left: 2rem;
+  padding-left: 1.8rem;
   position: relative;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .focus-list li::before {
-  content: "✓";
+  content: "•";
   position: absolute;
   left: 0;
   color: #5DADE2;
@@ -233,12 +231,12 @@ button.btn {
 ========================= */
 
 footer {
-  padding: 2.5rem 1rem;
+  padding: 2rem 1rem;
   text-align: center;
   color: #64748b;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.4);
-  border-top: 1px solid rgba(226, 232, 240, 0.5);
+  font-size: 0.85rem;
+  background: #ffffff;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
   margin-top: 2rem;
 }
 
@@ -250,7 +248,7 @@ footer {
 @media (max-width: 600px) {
 
   .main-logo {
-    max-height: 120px;
+    max-height: 110px;
   }
 
   .hero {
@@ -259,16 +257,16 @@ footer {
 
   .hero-card {
     padding: 2rem 1.4rem;
-    border-radius: 18px;
+    border-radius: 16px;
   }
 
   .hero-card h1 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.6rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-buttons {
@@ -282,13 +280,13 @@ footer {
   }
 
   .content {
-    padding: 2.2rem 1.3rem;
-    margin: 0 1rem 1.3rem;
-    border-radius: 18px;
+    padding: 2rem 1.25rem;
+    margin: 0 1rem 1.25rem;
+    border-radius: 16px;
   }
 
   .content h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .focus-list {
