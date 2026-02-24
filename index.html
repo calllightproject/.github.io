@@ -173,7 +173,7 @@
   </section>
 
   <!-- =========================
-       DEMO
+       DEMO (YOUTUBE EMBED)
   ========================== -->
   <section id="demoSection" class="content demo hidden" aria-hidden="true">
     <h2>CareConnect Overview (1 Minute)</h2>
@@ -182,12 +182,15 @@
       Narrated overview of structured intake and routing architecture.
     </p>
 
-    <video id="demoVideo" controls playsinline preload="metadata" width="100%">
-      <source
-        src="https://dl.dropboxusercontent.com/scl/fi/kb51b0s46atox710zkomh/CareConnect_2_narration.mp4?rlkey=h936zetvygusthwv4nfaodp12"
-        type="video/mp4"
-      />
-    </video>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube.com/embed/aDnDDbxtOsM?rel=0"
+        title="CareConnect Overview"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
 
   <!-- =========================
@@ -222,13 +225,11 @@
   <script>
     const btn = document.getElementById("demoBtn");
     const section = document.getElementById("demoSection");
-    const video = document.getElementById("demoVideo");
 
     btn?.addEventListener("click", () => {
       section.classList.remove("hidden");
       section.setAttribute("aria-hidden", "false");
       section.scrollIntoView({ behavior: "smooth", block: "start" });
-      try { video.play(); } catch (e) {}
     });
   </script>
 
