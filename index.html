@@ -42,6 +42,7 @@
 
       <div class="hero-buttons">
         <a href="#careconnect" class="btn primary">CareConnect</a>
+        <a href="#smartswap" class="btn primary">Smart Swap</a>
         <button id="demoBtn" type="button" class="btn secondary">
           View 1 Minute Overview
         </button>
@@ -170,6 +171,84 @@
       Our systems are developed through applied workflow analysis,
       modular logic design, and practical bedside validation.
     </p>
+  </section>
+
+  <!-- =========================
+       SMART SWAP
+  ========================== -->
+  <section id="smartswap" class="content">
+    <h2>Smart Swap</h2>
+
+    <p>
+      Smart Swap is an intelligent healthcare shift swap platform that helps employees securely exchange shifts while preserving staffing rules, scheduling integrity, and organizational policies.
+    </p>
+
+    <p>
+      Designed by a bedside nurse, it streamlines complex shift swaps that traditional scheduling systems often cannot automate.
+    </p>
+
+    <h3 style="font-size: 1.25rem; margin-top: 1.8rem; margin-bottom: 1rem; color: #0f2f4a;">Key Features</h3>
+
+    <ul class="focus-list">
+      <li>Direct one-to-one shift swaps</li>
+      <li>Intelligent multi-person (chain) shift swaps</li>
+      <li>Automatic eligibility validation</li>
+      <li>Shift reservation during pending approvals</li>
+      <li>Prevention of scheduling conflicts and double booking</li>
+      <li>Staffing rule enforcement</li>
+      <li>Smart match recommendations</li>
+      <li>Complete audit trail</li>
+      <li>Designed specifically for healthcare scheduling workflows</li>
+    </ul>
+  </section>
+
+  <!-- =========================
+       SMART SWAP TECHNOLOGY
+  ========================== -->
+  <section class="content">
+    <h2>Smart Swap Technology Stack</h2>
+
+    <ul class="focus-list">
+      <li>Python</li>
+      <li>Flask</li>
+      <li>SQLite</li>
+      <li>HTML / CSS / JavaScript</li>
+      <li>Jinja Templates</li>
+    </ul>
+
+    <h3 style="font-size: 1.25rem; margin-top: 1.8rem; margin-bottom: 1rem; color: #0f2f4a;">Integration Readiness</h3>
+
+    <p>
+      Smart Swap is designed to integrate with workforce management platforms such as UKG through secure APIs. The application synchronizes employee schedules, validates eligibility, retrieves shift information, and automatically updates approved shift swaps while allowing the scheduling system to remain the source of truth.
+    </p>
+  </section>
+
+  <!-- =========================
+       SMART SWAP WORKFLOW
+  ========================== -->
+  <section class="content integration-diagram">
+    <h2>Smart Swap Integration Path</h2>
+
+    <div class="diagram-row">
+      <div class="diagram-box">
+        <h3>Employee</h3>
+        <p>Initiates shift swap request</p>
+      </div>
+
+      <div class="diagram-arrow">→</div>
+
+      <div class="diagram-box highlight">
+        <h3>Smart Swap Engine</h3>
+        <p>Validation, matching, eligibility rules</p>
+      </div>
+
+      <div class="diagram-arrow">→</div>
+
+      <div class="diagram-box">
+        <h3>WFM System (UKG)</h3>
+        <p>Approval workflow & schedule update</p>
+      </div>
+    </div>
   </section>
 
   <!-- =========================
