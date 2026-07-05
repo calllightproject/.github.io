@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Crawford Solutions</title>
 
-  <meta name="description" content="Clinical workflow architecture designed to integrate with existing healthcare communication systems through structured intake and configurable routing logic." />
+  <meta name="description" content="Healthcare workflow software designed by clinicians, including CareConnect for structured patient request intake and Smart Swap for intelligent healthcare shift swapping." />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -31,17 +31,17 @@
       <h1>Crawford Solutions</h1>
 
       <p class="hero-subtitle">
-        Clinical workflow architecture for modern healthcare systems.
+        Healthcare workflow software designed by clinicians.
       </p>
 
       <p style="max-width: 720px; margin: 0 auto 1.8rem; color: #41576d;">
-        We design modular workflow layers built on configurable routing
-        frameworks and structured intake intelligence that enhance
-        existing healthcare communication infrastructure.
+        We build software that improves healthcare communication and workforce
+        operations while integrating with existing clinical and scheduling systems.
       </p>
 
       <div class="hero-buttons">
         <a href="#careconnect" class="btn primary">CareConnect</a>
+        <a href="#smartswap" class="btn secondary">Smart Swap</a>
         <button id="demoBtn" type="button" class="btn secondary">
           View 1 Minute Overview
         </button>
@@ -56,19 +56,20 @@
     <h2>CareConnect</h2>
 
     <p>
-      CareConnect is a structured digital intake layer built on a configurable
-      clinical workflow logic framework designed to standardize patient request
-      capture before escalation through existing nurse communication systems.
+      CareConnect is a digital intake layer that captures, categorizes, and
+      routes patient requests before they enter existing nurse communication
+      systems.
     </p>
 
     <p>
-      The system incorporates a modular routing architecture that supports:
+      The system supports clearer communication, more consistent routing, and
+      better visibility into frontline workflow demands.
     </p>
 
     <ul class="focus-list">
-      <li>Structured request classification</li>
+      <li>Structured patient request capture</li>
       <li>Role-based routing logic</li>
-      <li>Time-sensitive prioritization modeling</li>
+      <li>Time-sensitive prioritization</li>
       <li>Language-accessible intake configuration</li>
     </ul>
   </section>
@@ -81,36 +82,35 @@
 
     <p>
       In many hospital environments, patient requests enter communication
-      systems in unstructured formats. This can result in ambiguity,
-      inefficient routing, role confusion, and limited visibility into
-      response performance.
+      systems in unstructured formats. This can create ambiguity, inefficient
+      routing, role confusion, and limited visibility into response performance.
     </p>
 
     <p>
-      CareConnect addresses this through a structured intake methodology
-      developed through frontline workflow analysis and systems-based modeling.
+      CareConnect addresses this through structured intake logic developed from
+      frontline workflow analysis and bedside experience.
     </p>
   </section>
 
   <!-- =========================
-       INTEGRATION MODEL
+       CARECONNECT INTEGRATION MODEL
   ========================== -->
   <section class="content">
-    <h2>Integration Model</h2>
+    <h2>CareConnect Integration Model</h2>
 
     <ul class="focus-list">
       <li>Designed as a lightweight digital intake layer</li>
-      <li>Built on configurable workflow logic architecture</li>
+      <li>Built on configurable workflow logic</li>
       <li>Supports API, webhook, or routing-level integration</li>
       <li>Operates alongside existing safety escalation pathways</li>
     </ul>
   </section>
 
   <!-- =========================
-       INTEGRATION DIAGRAM
+       CARECONNECT INTEGRATION DIAGRAM
   ========================== -->
   <section class="content integration-diagram">
-    <h2>Structured Integration Path</h2>
+    <h2>CareConnect Integration Path</h2>
 
     <div class="diagram-row">
       <div class="diagram-box">
@@ -122,7 +122,7 @@
 
       <div class="diagram-box highlight">
         <h3>CareConnect Layer</h3>
-        <p>Structured intake + configurable routing framework</p>
+        <p>Structured intake + configurable routing logic</p>
       </div>
 
       <div class="diagram-arrow">→</div>
@@ -135,23 +135,111 @@
   </section>
 
   <!-- =========================
+       SMART SWAP
+  ========================== -->
+  <section id="smartswap" class="content">
+    <h2>Smart Swap</h2>
+
+    <p>
+      Smart Swap is an intelligent healthcare shift swap platform that helps
+      employees exchange shifts while protecting staffing rules, schedule
+      integrity, and organizational policies.
+    </p>
+
+    <p>
+      Designed from frontline nursing experience, Smart Swap supports both
+      direct and multi-person shift swaps that are difficult to coordinate
+      manually or through traditional scheduling tools.
+    </p>
+
+    <ul class="focus-list">
+      <li>Direct one-to-one shift swaps</li>
+      <li>Intelligent multi-person shift swap matching</li>
+      <li>Eligibility and role validation</li>
+      <li>Pending shift reservation during approvals</li>
+      <li>Prevention of double booking and schedule conflicts</li>
+      <li>Staffing rule enforcement</li>
+      <li>Smart match recommendations</li>
+      <li>Audit-ready swap history</li>
+    </ul>
+  </section>
+
+  <!-- =========================
+       SMART SWAP TECHNOLOGY
+  ========================== -->
+  <section class="content">
+    <h2>Smart Swap Technology Stack</h2>
+
+    <ul class="focus-list">
+      <li>Python</li>
+      <li>Flask</li>
+      <li>SQLite</li>
+      <li>HTML / CSS / JavaScript</li>
+      <li>Jinja Templates</li>
+    </ul>
+  </section>
+
+  <!-- =========================
+       SMART SWAP INTEGRATION
+  ========================== -->
+  <section class="content">
+    <h2>Smart Swap Integration Readiness</h2>
+
+    <p>
+      Smart Swap is designed to integrate with workforce management platforms
+      such as UKG through secure APIs. The application can synchronize employee
+      schedules, validate eligibility, retrieve shift information, and submit
+      approved shift swaps while allowing the workforce management system to
+      remain the source of truth.
+    </p>
+  </section>
+
+  <!-- =========================
+       SMART SWAP INTEGRATION DIAGRAM
+  ========================== -->
+  <section class="content integration-diagram">
+    <h2>Smart Swap Integration Path</h2>
+
+    <div class="diagram-row">
+      <div class="diagram-box">
+        <h3>Employee</h3>
+        <p>Initiates shift swap request</p>
+      </div>
+
+      <div class="diagram-arrow">→</div>
+
+      <div class="diagram-box highlight">
+        <h3>Smart Swap Engine</h3>
+        <p>Matching, validation, eligibility, and staffing rules</p>
+      </div>
+
+      <div class="diagram-arrow">→</div>
+
+      <div class="diagram-box">
+        <h3>Workforce System</h3>
+        <p>UKG or existing scheduling platform</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
        VENDOR PARTNERSHIP
   ========================== -->
   <section class="content">
     <h2>Vendor Partnership Opportunities</h2>
 
     <p>
-      CareConnect is positioned to enhance existing healthcare communication
-      ecosystems by introducing structured intake intelligence prior to
-      message escalation.
+      Crawford Solutions products are designed to enhance existing healthcare
+      software ecosystems by adding focused workflow layers for communication,
+      scheduling, and operational efficiency.
     </p>
 
     <ul class="focus-list">
-      <li>Enhances nurse communication platforms</li>
-      <li>Adds structured intake before task escalation</li>
-      <li>Supports configurable routing intelligence layers</li>
-      <li>Improves clarity of role-based task distribution</li>
-      <li>Expands accessibility through adaptable intake configuration</li>
+      <li>Enhances existing healthcare platforms</li>
+      <li>Adds structured workflow logic before escalation or approval</li>
+      <li>Supports configurable routing and eligibility frameworks</li>
+      <li>Improves clarity of role-based task and schedule workflows</li>
+      <li>Designed for integration, pilot exploration, and partnership discussions</li>
     </ul>
   </section>
 
@@ -167,8 +255,8 @@
     </p>
 
     <p>
-      Our systems are developed through applied workflow analysis,
-      modular logic design, and practical bedside validation.
+      Our systems are developed through applied workflow analysis, modular logic
+      design, and practical bedside validation.
     </p>
   </section>
 
@@ -200,7 +288,8 @@
     <h2>Contact</h2>
 
     <p>
-      For vendor partnerships, integration discussions, or pilot exploration:
+      For vendor partnerships, integration discussions, pilot exploration, or
+      product demonstrations:
       <br />
       <a href="mailto:info@crawfordsolutionsllc.com">
         info@crawfordsolutionsllc.com
@@ -213,9 +302,9 @@
   ========================== -->
   <footer>
     <p>
-      © 2025 Crawford Solutions LLC  
+      © 2025 Crawford Solutions LLC
       <br />
-      Structured workflow architecture and routing framework under active development.
+      Healthcare workflow software for communication, scheduling, and operational efficiency.
     </p>
   </footer>
 
