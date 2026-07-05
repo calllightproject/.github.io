@@ -461,3 +461,146 @@ footer {
   font-size: 0.92rem;
   font-weight: 600;
 }
+/* =========================
+   PRODUCT OVERVIEW
+========================= */
+
+.product-overview {
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: #f9fcff;
+  border: 1px solid rgba(226,232,240,.95);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 8px 22px rgba(15,23,42,.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(15,23,42,.08);
+}
+
+.product-card h3 {
+  margin: .4rem 0 .8rem;
+  font-size: 1.6rem;
+}
+
+.product-card p {
+  margin-bottom: 1.5rem;
+}
+
+.product-label {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #7b8794;
+}
+
+
+/* =========================
+   PRODUCT HEADERS
+========================= */
+
+.product-header {
+  padding: 3rem 2rem;
+}
+
+.product-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: .8rem;
+}
+
+.careconnect-header {
+  background: linear-gradient(180deg,#eef8ff,#ffffff);
+}
+
+.smartswap-header {
+  background: linear-gradient(180deg,#eefaf3,#ffffff);
+}
+
+.careconnect-header h2 {
+  color:#2e86c1;
+}
+
+.smartswap-header h2 {
+  color:#11845b;
+}
+
+
+/* =========================
+   SECTION DIVIDER
+========================= */
+
+.section-divider{
+    width:180px;
+    margin:4rem auto;
+    border:none;
+    border-top:2px solid #dbe7f2;
+}
+
+
+/* =========================
+   SMART SWAP GALLERY
+========================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2rem;
+    margin-top:2rem;
+}
+
+.screenshot-card{
+    background:#ffffff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 28px rgba(15,23,42,.08);
+    transition:transform .2s ease;
+}
+
+.screenshot-card:hover{
+    transform:translateY(-4px);
+}
+
+.screenshot-card img{
+    width:100%;
+    display:block;
+}
+
+.screenshot-card figcaption{
+    padding:1rem;
+    font-weight:600;
+    color:#41576d;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:700px){
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-header h2{
+        font-size:2rem;
+    }
+
+}
